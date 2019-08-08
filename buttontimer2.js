@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         ButtonTime
-// @namespace    http://mccrush.ru
-// @version      0.1.0
-// @description  Button time
+// @name         buttontimer2
+// @namespace    https://github.com/mccrush/buttontimer2
+// @version      1.0.1
+// @description  Кнопка-таймер для сайта База вопросов ЧГК
 // @author       mccrush.ru
 // @match        https://db.chgk.info/*
 // @grant        none
