@@ -63,8 +63,8 @@
 
     document.body.appendChild(divBlock);
 
-    let mainSignal = new Audio('http://mccrush.ru/sound/mainSignal.wav');
-    let preAlarm = new Audio('http://mccrush.ru/sound/preAlarm.wav');
+    let mainSignal = new Audio('https://raw.githubusercontent.com/mccrush/buttontimer2/master/mainSignal.wav');
+    let preAlarm = new Audio('https://raw.githubusercontent.com/mccrush/buttontimer2/master/preAlarm.wav');
 
     let butStatus = false;
     let timerId, timeInt1, timeInt2;
