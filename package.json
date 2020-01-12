@@ -1,19 +1,19 @@
 {
-  "name": "buttontimer2",
-  "version": "1.0.2",
-  "description": "Кнопка-таймер для сайта База вопросов ЧГК\r ---",
-  "main": "buttontimer2.js",
+  "name": "timer_chgk",
+  "version": "3.0",
+  "description": "Таймер для сайта «База вопросов Что? Где? Когда?»",
+  "main": "background.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mccrush/buttontimer2.git"
+    "url": "git+https://github.com/mccrush/timer_chgk.git"
   },
   "author": "'mccrush.ru'",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mccrush/buttontimer2/issues"
+    "url": "https://github.com/mccrush/timer_chgk/issues"
   },
-  "homepage": "https://github.com/mccrush/buttontimer2#readme"
+  "homepage": "https://github.com/mccrush/timer_chgk#readme"
 }
