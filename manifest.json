@@ -1,0 +1,34 @@
+{
+  "name": "Таймер «Что? Где? Когда?»",
+  "version": "3.0",
+  "description": "Таймер для сайта «База вопросов Что? Где? Когда?»",
+  "permissions": [
+    "activeTab",
+    "declarativeContent",
+    "storage",
+    "https://db.chgk.info/*"
+  ],
+  "options_page": "options.html",
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/hourglass_16.png",
+      "32": "icons/hourglass_32.png",
+      "48": "icons/hourglass_48.png",
+      "128": "icons/hourglass_128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/hourglass_16.png",
+    "32": "icons/hourglass_32.png",
+    "48": "icons/hourglass_48.png",
+    "128": "icons/hourglass_128.png"
+  },
+  "manifest_version": 2
+}
