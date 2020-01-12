@@ -19,8 +19,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let timerStatus = false;
   let timeInterval1s, timeInterval50s, timeInterval60s;
 
-  console.log('showTime type of', typeof showTime);
-
   // Подключение файлов звука
   let mainSignal = new Audio('https://raw.githubusercontent.com/mccrush/timer_chgk/master/sounds/mainSignal.wav');
   let preAlarm = new Audio('https://raw.githubusercontent.com/mccrush/timer_chgk/master/sounds/preAlarm.wav');

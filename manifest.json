@@ -8,7 +8,6 @@
     "storage",
     "https://db.chgk.info/*"
   ],
-  "options_page": "html/options.html",
   "background": {
     "scripts": [
       "js/background.js"
