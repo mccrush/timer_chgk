@@ -13,11 +13,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
 
   // Переменные параметров Времени и Звука
-  let showTime = localStorage.getItem('showTime') || true;
-  let playSound = localStorage.getItem('playSound') || true;
+  let showTime = localStorage.getItem('showTime') || 'true';
+  let playSound = localStorage.getItem('playSound') || 'true';
   let seconds = '';
   let timerStatus = false;
   let timeInterval1s, timeInterval50s, timeInterval60s;
+
+  console.log('showTime type of', typeof showTime);
 
   // Подключение файлов звука
   let mainSignal = new Audio('https://raw.githubusercontent.com/mccrush/timer_chgk/master/sounds/mainSignal.wav');
@@ -32,21 +34,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // Создание чекбокса Времени
   let checkBoxT = document.createElement('input');
   checkBoxT.type = 'checkbox';
-  checkBoxT.checked = showTime;
+  checkBoxT.checked = showTime === 'true' ? true : false;
   checkBoxT.title = 'Отображать секунды';
   checkBoxT.style = style.checkboxTime;
 
   // Создание чекбокса Звука
   let checkBoxS = document.createElement('input');
   checkBoxS.type = 'checkbox';
-  checkBoxS.checked = playSound;
+  checkBoxS.checked = playSound === 'true' ? true : false;;
   checkBoxS.title = 'Проигрывать звук';
   checkBoxS.style = style.checkboxSound;
 
   // Создание блока Времени
   let divTime = document.createElement('div');
   divTime.style = style.divTime;
-  divTime.textContent = showTime ? 60 : '';
+  divTime.textContent = showTime === 'true' ? 60 : '';
 
   // Создание кнопки
   let butButton = document.createElement('button');
@@ -65,11 +67,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // Обработка события клика по чекбоксу Времени
   checkBoxT.onchange = (e) => {
     if (e.target.checked) {
-      showTime = true;
+      showTime = 'true';
       localStorage.setItem('showTime', showTime);
       divTime.textContent = seconds;
     } else {
-      showTime = false;
+      showTime = 'false';
       localStorage.setItem('showTime', showTime);
       divTime.textContent = '';
     }
@@ -78,10 +80,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // Обработка события клика по чекбоксу Звука
   checkBoxS.onchange = (e) => {
     if (e.target.checked) {
-      playSound = true;
+      playSound = 'true';
       localStorage.setItem('playSound', playSound);
     } else {
-      playSound = false;
+      playSound = 'false';
       localStorage.setItem('playSound', playSound);
     }
   }
@@ -93,19 +95,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
     // Если таймер не запущен
     if (timerStatus == false) {
       timerStatus = true;
-      if (playSound) mainSignal.play();
+      if (playSound === 'true') mainSignal.play();
       e.target.style = style.buttonActive;
       e.target.textContent = 'Стоп';
 
       // Таймер отсчета секунд
       timeInterval1s = setInterval(() => {
         seconds = seconds - 1;
-        divTime.textContent = showTime ? seconds : '';
+        divTime.textContent = showTime === 'true' ? seconds : '';
       }, 1000);
 
       // Таймер 10-ти секунд
       timeInterval50s = setTimeout(() => {
-        if (playSound) preAlarm.play();
+        if (playSound === 'true') preAlarm.play();
         butButton.style = style.buttonRed;
       }, 51000);
 
@@ -113,10 +115,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
       timeInterval60s = setTimeout(() => {
         clearInterval(timeInterval1s);
         timerStatus = false;
-        if (playSound) mainSignal.play();
+        if (playSound === 'true') mainSignal.play();
         butButton.style = style.buttonNormal;
         butButton.textContent = 'Старт';
-        divTime.textContent = showTime ? 60 : '';
+        divTime.textContent = showTime === 'true' ? 60 : '';
       }, 61000);
     } else { // Если таймер запущен
       clearInterval(timeInterval1s);
