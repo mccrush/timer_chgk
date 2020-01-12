@@ -12,7 +12,7 @@ chrome.runtime.onInstalled.addListener(function () {
         pageUrl: { hostEquals: 'db.chgk.info' },
       })
       ],
-      actions: [new chrome.declarativeContent.RequestContentScript({ js: ["timer.js"] })],
+      actions: [new chrome.declarativeContent.RequestContentScript({ js: ["js/timer.js"] })],
     }]);
   });
 

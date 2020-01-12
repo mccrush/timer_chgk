@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
   // Подключение файлов звука
-  let mainSignal = new Audio('https://raw.githubusercontent.com/mccrush/buttontimer2/master/sounds/mainSignal.wav');
-  let preAlarm = new Audio('https://raw.githubusercontent.com/mccrush/buttontimer2/sounds/master/preAlarm.wav');
+  let mainSignal = new Audio('https://raw.githubusercontent.com/mccrush/timer_chgk/master/sounds/mainSignal.wav');
+  let preAlarm = new Audio('https://raw.githubusercontent.com/mccrush/timer_chgk/sounds/master/preAlarm.wav');
 
   let butStatus = false;
   let timerId, timeInt1, timeInt2;
